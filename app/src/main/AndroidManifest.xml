@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.erik.memoriaflash">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme.NoActionBar">
+        <activity
+            android:name=".PaginaPrincipalActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MenuInicialActivity"
+            android:label="@string/title_activity_menu_inicial"
+            android:parentActivityName=".PaginaPrincipalActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.erik.memoriaflash.PaginaPrincipalActivity" />
+        </activity>
+        <activity
+            android:name=".RepasarActivity"
+            android:label="@string/title_activity_repasar"
+            android:parentActivityName=".MenuInicialActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.erik.memoriaflash.MenuInicialActivity" />
+        </activity>
+        <activity
+            android:name=".EvaluarActivity"
+            android:label="@string/title_activity_evaluar"
+            android:parentActivityName=".MenuInicialActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.erik.memoriaflash.MenuInicialActivity" />
+        </activity>
+        <activity
+            android:name=".ResultadosActivity"
+            android:label="@string/title_activity_resultados"
+            android:parentActivityName=".MenuInicialActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.erik.memoriaflash.MenuInicialActivity" />
+        </activity>
+        <activity
+            android:name=".InformacionActivity"
+            android:label="@string/title_activity_informacion"
+            android:parentActivityName=".PaginaPrincipalActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.erik.memoriaflash.PaginaPrincipalActivity" />
+        </activity>
+    </application>
+
+</manifest>
