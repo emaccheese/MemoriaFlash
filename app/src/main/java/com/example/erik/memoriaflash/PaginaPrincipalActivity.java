@@ -86,7 +86,7 @@ public class PaginaPrincipalActivity extends AppCompatActivity {
                 boolVitreos = false;
                 botonVitreos.setChecked(false);
             }
-            if(botonCeramicos.isChecked() == false){
+            if(!botonCeramicos.isChecked()){
                 boolCeramicos = true;
                 botonCeramicos.setChecked(true);
             }
@@ -96,7 +96,7 @@ public class PaginaPrincipalActivity extends AppCompatActivity {
                 boolCeramicos = false;
                 botonCeramicos.setChecked(false);
             }
-            if(botonVitreos.isChecked() == false){
+            if(!botonVitreos.isChecked()){
                 boolVitreos = true;
                 botonVitreos.setChecked(true);
             }
@@ -110,10 +110,10 @@ public class PaginaPrincipalActivity extends AppCompatActivity {
             intent = new Intent(this,InformacionActivity.class);
         }
         if(view == findViewById(R.id.btnUnidad1)){
-            intent.putExtra(EXTRA,3);
+            intent.putExtra(EXTRA,1);
         }
         if(view == findViewById(R.id.btnUnidad2)){
-            intent.putExtra(EXTRA,3);
+            intent.putExtra(EXTRA,2);
         }
         if(view == findViewById(R.id.btnUnidad3)){
             intent.putExtra(EXTRA,3);

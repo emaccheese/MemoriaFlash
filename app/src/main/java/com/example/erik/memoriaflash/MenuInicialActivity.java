@@ -7,9 +7,11 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Toast;
 
 public class MenuInicialActivity extends AppCompatActivity {
-
+    public int unidadInt =0;
+    public final static String EXTRA = "com.example..erik.memoriaflash";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,8 +20,9 @@ public class MenuInicialActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         Intent intent = getIntent();
-        String unidad = intent.getStringExtra(PaginaPrincipalActivity.EXTRA);
-
+        unidadInt = intent.getIntExtra(PaginaPrincipalActivity.EXTRA,0);
+        Integer index = unidadInt;
+        Toast.makeText(this, index.toString(), Toast.LENGTH_LONG).show();
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
@@ -35,6 +38,7 @@ public class MenuInicialActivity extends AppCompatActivity {
         if(view == findViewById(R.id.btnResultadosUnidad)){
             intent = new Intent(this,RepasarActivity.class);
         }
+        intent.putExtra(EXTRA,unidadInt);
         startActivity(intent);
     }
 }
