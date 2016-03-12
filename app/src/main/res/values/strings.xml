@@ -6,5 +6,14 @@
     <string name="title_activity_evaluar">EvaluarActivity</string>
     <string name="title_activity_resultados">ResultadosActivity</string>
     <string name="title_activity_informacion">InformacionActivity</string>
+    <string name="title_activity_info1">Facultad de Ciencias Químicas e ingeniería</string>
+    <string name="title_activity_info2">Materia: Materiales Cerámicos</string>
+    <string name="title_activity_info3">Nivel académico: Licenciatura</string>
+    <string name="title_activity_info4">Clave única del curso: 6303</string>
+    <string name="title_activity_info5">Créditos y Total de horas: 6 Créditos. 64 Horas. </string>
+    <string name="title_activity_info6">Etapa formativa. Terminal </string>
+    <string name="title_activity_info7">Carácter de la asignatura. Optativa</string>
+    <string name="title_activity_info8">Perfil recomendable de los participantes: Los conocimientos previos de Química; General, Orgánica, Inorgánica y Analítica.</string>
+    <string name="title_activity_info9">Evaluación</string>
 
 </resources>
