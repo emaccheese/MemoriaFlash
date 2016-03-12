@@ -1,22 +1,15 @@
 package com.example.erik.memoriaflash;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.res.Resources;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
-import android.widget.LinearLayout;
-import android.widget.PopupWindow;
 import android.widget.RadioButton;
-
-import static com.example.erik.memoriaflash.R.drawable.buttons_azul;
 
 public class PaginaPrincipalActivity extends AppCompatActivity {
     public final static String EXTRA = "com.example..erik.memoriaflash";
@@ -64,12 +57,12 @@ public class PaginaPrincipalActivity extends AppCompatActivity {
             toolbar.setBackgroundResource(R.color.colorPrimaryDarkAzul);
         }
         if(botonVitreos.isChecked()){
-            b1.setBackgroundResource(R.drawable.buttons_rojo);
-            b2.setBackgroundResource(R.drawable.buttons_rojo);
-            b3.setBackgroundResource(R.drawable.buttons_rojo);
-            b4.setBackgroundResource(R.drawable.buttons_rojo);
-            b5.setBackgroundResource(R.drawable.buttons_rojo);
-            toolbar.setBackgroundResource(R.color.colorAccentRojo);
+            b1.setBackgroundResource(R.drawable.buttons_verde);
+            b2.setBackgroundResource(R.drawable.buttons_verde);
+            b3.setBackgroundResource(R.drawable.buttons_verde);
+            b4.setBackgroundResource(R.drawable.buttons_verde);
+            b5.setBackgroundResource(R.drawable.buttons_verde);
+            toolbar.setBackgroundResource(R.color.colorAccentVerde);
         }
 
     }
@@ -122,12 +115,12 @@ public class PaginaPrincipalActivity extends AppCompatActivity {
                 boolVitreos = true;
                 botonVitreos.setChecked(true);
             }
-            b1.setBackgroundResource(R.drawable.buttons_rojo);
-            b2.setBackgroundResource(R.drawable.buttons_rojo);
-            b3.setBackgroundResource(R.drawable.buttons_rojo);
-            b4.setBackgroundResource(R.drawable.buttons_rojo);
-            b5.setBackgroundResource(R.drawable.buttons_rojo);
-            toolbar.setBackgroundResource(R.color.colorAccentRojo);
+            b1.setBackgroundResource(R.drawable.buttons_verde);
+            b2.setBackgroundResource(R.drawable.buttons_verde);
+            b3.setBackgroundResource(R.drawable.buttons_verde);
+            b4.setBackgroundResource(R.drawable.buttons_verde);
+            b5.setBackgroundResource(R.drawable.buttons_verde);
+            toolbar.setBackgroundResource(R.color.colorAccentVerde);
         }
     }
 

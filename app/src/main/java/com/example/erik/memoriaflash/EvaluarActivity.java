@@ -15,6 +15,13 @@ public class EvaluarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_evaluar);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        if(PaginaPrincipalActivity.botonVitreos.isChecked()){
+            toolbar.setBackgroundResource(R.color.colorPrimaryVerde);
+        }
+        if(PaginaPrincipalActivity.botonCeramicos.isChecked()){
+            toolbar.setBackgroundResource(R.color.colorPrimaryAzul);
+        }
+
         setSupportActionBar(toolbar);
         Intent intent = getIntent();
 

@@ -65,7 +65,7 @@
                 />
 
             <Button
-                android:background="@drawable/buttons_rojo"
+                android:background="@drawable/buttons_verde"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Unidad 2"
@@ -75,7 +75,7 @@
                 />
 
             <Button
-                android:background="@drawable/buttons_rojo"
+                android:background="@drawable/buttons_verde"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Unidad 3"
@@ -90,7 +90,7 @@
                 android:text="Resultados"
                 android:onClick="opcionSeleccionada"
                 android:id="@+id/btnResultadosGenerales"
-                android:background="@drawable/buttons_rojo"
+                android:background="@drawable/buttons_verde"
                 style="@style/button_text"
                 />
         </LinearLayout>
