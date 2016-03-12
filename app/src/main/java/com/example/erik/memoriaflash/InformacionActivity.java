@@ -19,7 +19,12 @@ public class InformacionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_informacion);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        if(PaginaPrincipalActivity.botonVitreos.isChecked()){
+            toolbar.setBackgroundResource(R.color.colorPrimaryVerde);
+        }
+        if(PaginaPrincipalActivity.botonCeramicos.isChecked()){
+            toolbar.setBackgroundResource(R.color.colorPrimaryAzul);
+        }
         Intent intent = getIntent();
         unidadInt = intent.getIntExtra(PaginaPrincipalActivity.EXTRA,0);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

@@ -18,6 +18,12 @@ public class MenuInicialActivity extends AppCompatActivity {
         setContentView(R.layout.activity_menu_inicial);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        if(PaginaPrincipalActivity.botonVitreos.isChecked()){
+            toolbar.setBackgroundResource(R.color.colorPrimaryVerde);
+        }
+        if(PaginaPrincipalActivity.botonCeramicos.isChecked()){
+            toolbar.setBackgroundResource(R.color.colorPrimaryAzul);
+        }
 
         Intent intent = getIntent();
         unidadInt = intent.getIntExtra(PaginaPrincipalActivity.EXTRA,0);
