@@ -84,6 +84,13 @@
                 android:id="@+id/txt9"
                 android:layout_alignParentStart="true"
                 android:layout_marginStart="10dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:id="@+id/txt10"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="10dp" />
 
         </LinearLayout>
 
