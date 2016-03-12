@@ -33,10 +33,13 @@ public class MenuInicialActivity extends AppCompatActivity {
             intent = new Intent(this,RepasarActivity.class);
         }
         if(view == findViewById(R.id.btnEvaluar)){
-            intent = new Intent(this,RepasarActivity.class);
+            intent = new Intent(this,EvaluarActivity.class);
         }
         if(view == findViewById(R.id.btnResultadosUnidad)){
-            intent = new Intent(this,RepasarActivity.class);
+            intent = new Intent(this,ResultadosActivity.class);
+        }
+        if(view == findViewById(R.id.btnInformacionUnidad)){
+            intent = new Intent(this,InformacionActivity.class);
         }
         intent.putExtra(EXTRA,unidadInt);
         startActivity(intent);
