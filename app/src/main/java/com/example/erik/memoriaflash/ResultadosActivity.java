@@ -16,10 +16,15 @@ public class ResultadosActivity extends AppCompatActivity {
         setContentView(R.layout.activity_resultados);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        if(PaginaPrincipalActivity.botonVitreos.isChecked()){
+            toolbar.setBackgroundResource(R.color.colorPrimaryVerde);
+        }
+        if(PaginaPrincipalActivity.botonCeramicos.isChecked()){
+            toolbar.setBackgroundResource(R.color.colorPrimaryAzul);
+        }
 
         Intent intent = getIntent();
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
-
 }
