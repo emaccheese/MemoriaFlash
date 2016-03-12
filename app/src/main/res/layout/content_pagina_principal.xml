@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutPaginaPrincipal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -12,14 +13,10 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.erik.memoriaflash.PaginaPrincipalActivity"
     tools:showIn="@layout/activity_pagina_principal"
-
     >
-
-
    <LinearLayout
        android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       >
+       android:layout_height="wrap_content">
        <RadioButton
            android:layout_width="0dp"
            android:layout_height="45dp"
@@ -38,54 +35,64 @@
             android:id="@+id/rdBtnVitreos"
             android:onClick="materiaSeleccionada" />
    </LinearLayout>
-
-    <Button
-        android:id="@+id/btnInfoMateria"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Informacion de la Materia"
-        android:background="@drawable/buttons"
-        android:onClick="opcionSeleccionada"
-        style="@style/button_text"
-        />
-    <Button
-        android:background="@drawable/buttons"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Unidad 1"
-        android:onClick="opcionSeleccionada"
-        android:id="@+id/btnUnidad1"
-        style="@style/button_text"
-        />
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView"
+        android:layout_gravity="center_horizontal">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-    <Button
-        android:background="@drawable/buttons"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Unidad 2"
-        android:onClick="opcionSeleccionada"
-        android:id="@+id/btnUnidad2"
-        style="@style/button_text"
-        />
+            <Button
+                android:id="@+id/btnInfoMateria"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Informacion de la Materia"
 
-    <Button
-        android:background="@drawable/buttons"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Unidad 3"
-        android:onClick="opcionSeleccionada"
-        android:id="@+id/btnUnidad3"
-        style="@style/button_text"
-        />
-    <Button
+                android:onClick="opcionSeleccionada"
+                style="@style/button_text"
+                />
+            <Button
 
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Resultados"
-        android:onClick="opcionSeleccionada"
-        android:id="@+id/btnResultadosGenerales"
-        android:background="@drawable/buttons"
-        style="@style/button_text"
-        />
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Unidad 1"
+                android:onClick="opcionSeleccionada"
+                android:id="@+id/btnUnidad1"
+                style="@style/button_text"
+                />
 
+            <Button
+                android:background="@drawable/buttons_rojo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Unidad 2"
+                android:onClick="opcionSeleccionada"
+                android:id="@+id/btnUnidad2"
+                style="@style/button_text"
+                />
+
+            <Button
+                android:background="@drawable/buttons_rojo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Unidad 3"
+                android:onClick="opcionSeleccionada"
+                android:id="@+id/btnUnidad3"
+                style="@style/button_text"
+                />
+            <Button
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Resultados"
+                android:onClick="opcionSeleccionada"
+                android:id="@+id/btnResultadosGenerales"
+                android:background="@drawable/buttons_rojo"
+                style="@style/button_text"
+                />
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>

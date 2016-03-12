@@ -6,15 +6,17 @@ import android.content.SharedPreferences;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.RadioButton;
+
+import static com.example.erik.memoriaflash.R.drawable.buttons_azul;
 
 public class PaginaPrincipalActivity extends AppCompatActivity {
     public final static String EXTRA = "com.example..erik.memoriaflash";
@@ -24,31 +26,21 @@ public class PaginaPrincipalActivity extends AppCompatActivity {
     public static RadioButton botonVitreos;
     public boolean boolCeramicos;
     public boolean boolVitreos;
+    public Button b1;
+    public Button b2;
+    public Button b3;
+    public Button b4;
+    public Button b5;
+    public Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pagina_principal);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle("Memoria Flash");
         setSupportActionBar(toolbar);
-
         botonCeramicos = (RadioButton)findViewById(R.id.rdBtnCeramicos);
         botonVitreos = (RadioButton)findViewById(R.id.rdBtnVitreos);
-
-        /*if( savedInstanceState != null){
-            boolCeramicos = savedInstanceState.getBoolean("estadoBtnCeramico");
-            boolVitreos = savedInstanceState.getBoolean("estadoBtnVitreos");
-        }*/
-
-
-       // boolCeramicos = settings.getBoolean("estadoBtnCeramico", true);
-       // boolVitreos = settings.getBoolean("estadoBtnVitreos",false);
-
-        //Resources resources = getResources();
-
-        //Estado inicial de materia escojida:
-        //botonCeramicos.setChecked(boolCeramicos);//resources.getBoolean(R.bool.boolMateriaCeramicos));
-        //botonVitreos.setChecked(boolVitreos);//resources.getBoolean(R.bool.boolMateriaVitreos));
     }
     @Override
     protected void onStart(){
@@ -56,6 +48,30 @@ public class PaginaPrincipalActivity extends AppCompatActivity {
         SharedPreferences settings = getSharedPreferences(PREFS_NAME,MODE_PRIVATE);
         botonCeramicos.setChecked(settings.getBoolean("estadoBtnCeramico",true));
         botonVitreos.setChecked(settings.getBoolean("estadoBtnVitreos",false));
+
+        b1 = (Button) findViewById(R.id.btnUnidad1);
+        b2 = (Button) findViewById(R.id.btnUnidad2);
+        b3 = (Button) findViewById(R.id.btnUnidad3);
+        b4 = (Button) findViewById(R.id.btnResultadosGenerales);
+        b5 = (Button) findViewById(R.id.btnInfoMateria);
+
+        if(botonCeramicos.isChecked()){
+            b1.setBackgroundResource(R.drawable.buttons_azul);
+            b2.setBackgroundResource(R.drawable.buttons_azul);
+            b3.setBackgroundResource(R.drawable.buttons_azul);
+            b4.setBackgroundResource(R.drawable.buttons_azul);
+            b5.setBackgroundResource(R.drawable.buttons_azul);
+            toolbar.setBackgroundResource(R.color.colorPrimaryDarkAzul);
+        }
+        if(botonVitreos.isChecked()){
+            b1.setBackgroundResource(R.drawable.buttons_rojo);
+            b2.setBackgroundResource(R.drawable.buttons_rojo);
+            b3.setBackgroundResource(R.drawable.buttons_rojo);
+            b4.setBackgroundResource(R.drawable.buttons_rojo);
+            b5.setBackgroundResource(R.drawable.buttons_rojo);
+            toolbar.setBackgroundResource(R.color.colorAccentRojo);
+        }
+
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -90,6 +106,12 @@ public class PaginaPrincipalActivity extends AppCompatActivity {
                 boolCeramicos = true;
                 botonCeramicos.setChecked(true);
             }
+            b1.setBackgroundResource(R.drawable.buttons_azul);
+            b2.setBackgroundResource(R.drawable.buttons_azul);
+            b3.setBackgroundResource(R.drawable.buttons_azul);
+            b4.setBackgroundResource(R.drawable.buttons_azul);
+            b5.setBackgroundResource(R.drawable.buttons_azul);
+            toolbar.setBackgroundResource(R.color.colorPrimaryDarkAzul);
         }
         if(view == botonVitreos){
             if(botonCeramicos.isChecked()){
@@ -100,6 +122,12 @@ public class PaginaPrincipalActivity extends AppCompatActivity {
                 boolVitreos = true;
                 botonVitreos.setChecked(true);
             }
+            b1.setBackgroundResource(R.drawable.buttons_rojo);
+            b2.setBackgroundResource(R.drawable.buttons_rojo);
+            b3.setBackgroundResource(R.drawable.buttons_rojo);
+            b4.setBackgroundResource(R.drawable.buttons_rojo);
+            b5.setBackgroundResource(R.drawable.buttons_rojo);
+            toolbar.setBackgroundResource(R.color.colorAccentRojo);
         }
     }
 
@@ -108,6 +136,7 @@ public class PaginaPrincipalActivity extends AppCompatActivity {
         Intent intent = new Intent(this,MenuInicialActivity.class);
         if(view == findViewById(R.id.btnInfoMateria)){
             intent = new Intent(this,InformacionActivity.class);
+            intent.putExtra(EXTRA,0);
         }
         if(view == findViewById(R.id.btnUnidad1)){
             intent.putExtra(EXTRA,1);
