@@ -46,6 +46,8 @@ public class InformacionActivity extends AppCompatActivity {
         texto8.setText(R.string.title_activity_info8);
         TextView texto9= (TextView) findViewById(R.id.txt9);
         texto9.setText(R.string.title_activity_info9);
+        TextView texto10= (TextView) findViewById(R.id.txt10);
+        texto10.setText(R.string.title_activity_info10);
 
     }
 
