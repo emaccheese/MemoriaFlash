@@ -19,7 +19,7 @@ import java.util.Random;
 public class RepasarActivity extends AppCompatActivity {
 
     public int unidadString = 0;
-    public int MAX = 30;
+    public int MAX = 10;
     public Preguntas arrayPreguntas[] = new Preguntas[MAX];
 
     public Random r = new Random();
@@ -103,7 +103,7 @@ public class RepasarActivity extends AppCompatActivity {
                     arrayPreguntas[9] = new Preguntas("Gres cerámico común:", "obtenido a partir de arcillas ordinarias, sometidas a temperaturas de unos 1.300 °C. " +
                             "Es muy empleado en pavimentos y paredes.",3);
             }
-            Toast.makeText(this,"Vitreos is checked",Toast.LENGTH_LONG).show();
+            //Toast.makeText(this,"Vitreos is checked",Toast.LENGTH_LONG).show();
         }else {
             if (PaginaPrincipalActivity.botonCeramicos.isChecked()) {
                 arrayPreguntas[0] = new Preguntas("CeramicosPregunta1", "CeramicosRespuesta1", 1);
@@ -124,7 +124,6 @@ public class RepasarActivity extends AppCompatActivity {
 
         Integer index = r.nextInt(arrayPreguntas.length);
 
-
         Toast.makeText(this,index.toString(),Toast.LENGTH_LONG).show();
         mostrarPregunta(arrayPreguntas[index]);
 
@@ -138,10 +137,8 @@ public class RepasarActivity extends AppCompatActivity {
         TextView textPregunta = (TextView) findViewById(R.id.tvPregunta);
         TextView textRespuesta = (TextView) findViewById(R.id.tvRespuesta);
 
-
         textPregunta.setText(pregunta.getPregunta());
         textRespuesta.setText(pregunta.getRespuesta());
-
     }
 
 }

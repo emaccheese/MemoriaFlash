@@ -12,5 +12,6 @@
     <color name="colorPrimaryAzul">#4e62e6</color>
     <color name="colorPrimaryDarkAzul">#060f49</color>
     <color name="colorAccentAzul">#1c2af4</color>
+    <color name="holo_red_dark">#141313</color>
 
 </resources>

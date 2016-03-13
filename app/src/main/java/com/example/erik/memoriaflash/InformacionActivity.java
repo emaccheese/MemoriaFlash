@@ -19,15 +19,19 @@ public class InformacionActivity extends AppCompatActivity {
         setContentView(R.layout.activity_informacion);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        Intent intent = getIntent();
+        unidadInt = intent.getIntExtra(PaginaPrincipalActivity.EXTRA,0);
+
         if(PaginaPrincipalActivity.botonVitreos.isChecked()){
             toolbar.setBackgroundResource(R.color.colorPrimaryVerde);
+            toolbar.setTitle("Informacion Vitreos");
         }
         if(PaginaPrincipalActivity.botonCeramicos.isChecked()){
             toolbar.setBackgroundResource(R.color.colorPrimaryAzul);
+            toolbar.setTitle("Informacion Ceramicos");
         }
-        Intent intent = getIntent();
-        unidadInt = intent.getIntExtra(PaginaPrincipalActivity.EXTRA,0);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
         TextView texto1= (TextView) findViewById(R.id.txt1);
         texto1.setText(R.string.title_activity_info1);
         TextView texto2= (TextView) findViewById(R.id.txt2);
@@ -49,6 +53,7 @@ public class InformacionActivity extends AppCompatActivity {
         TextView texto10= (TextView) findViewById(R.id.txt10);
         texto10.setText(R.string.title_activity_info10);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
 }

@@ -18,6 +18,7 @@ public class MenuInicialActivity extends AppCompatActivity {
         setContentView(R.layout.activity_menu_inicial);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        toolbar.setTitle("Menu");
         if(PaginaPrincipalActivity.botonVitreos.isChecked()){
             toolbar.setBackgroundResource(R.color.colorPrimaryVerde);
         }

@@ -30,8 +30,6 @@
             android:layout_height="30dp"
             android:id="@+id/tvRespuesta"
             />
-
-
     </LinearLayout>
 
     <LinearLayout
@@ -45,15 +43,14 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:text="Anterior"
             />
         <Button
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text=">>"
+            android:text="Siguiente"
             />
-
-
     </LinearLayout>
 
 </LinearLayout>

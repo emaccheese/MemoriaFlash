@@ -7,6 +7,8 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 public class ResultadosActivity extends AppCompatActivity {
 
@@ -22,7 +24,6 @@ public class ResultadosActivity extends AppCompatActivity {
         if(PaginaPrincipalActivity.botonCeramicos.isChecked()){
             toolbar.setBackgroundResource(R.color.colorPrimaryAzul);
         }
-
         Intent intent = getIntent();
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
