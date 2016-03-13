@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.RadioButton;
@@ -124,7 +123,7 @@ public class PaginaPrincipalActivity extends AppCompatActivity {
 
         Intent intent = new Intent(this,MenuInicialActivity.class);
         if(view == findViewById(R.id.btnInfoMateria)){
-            intent = new Intent(this,InformacionActivity.class);
+            intent = new Intent(this,InformacionGeneralActivity.class);
             intent.putExtra(EXTRA,0);
         }
         if(view == findViewById(R.id.btnUnidad1)){

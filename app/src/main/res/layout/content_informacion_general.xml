@@ -10,8 +10,8 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     android:orientation="vertical"
-    tools:context="com.example.erik.memoriaflash.InformacionActivity"
-    tools:showIn="@layout/activity_informacion">
+    tools:context=".InformacionGeneralActivity"
+    tools:showIn="@layout/activity_informacion_general">
 
     <ScrollView
         android:layout_width="match_parent"

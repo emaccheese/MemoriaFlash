@@ -55,13 +55,22 @@
                 android:value="com.example.erik.memoriaflash.MenuInicialActivity" />
         </activity>
         <activity
-            android:name=".InformacionActivity"
+            android:name=".InformacionGeneralActivity"
             android:label="@string/title_activity_informacion"
             android:parentActivityName=".PaginaPrincipalActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.erik.memoriaflash.PaginaPrincipalActivity" />
+        </activity>
+        <activity
+            android:name=".InformacionUnidadActivity"
+            android:label="@string/title_activity_informacion_unidad"
+            android:parentActivityName=".MenuInicialActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.erik.memoriaflash.MenuInicialActivity" />
         </activity>
     </application>
 

@@ -2,8 +2,6 @@ package com.example.erik.memoriaflash;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -46,7 +44,7 @@ public class MenuInicialActivity extends AppCompatActivity {
             intent = new Intent(this,ResultadosActivity.class);
         }
         if(view == findViewById(R.id.btnInformacionUnidad)){
-            intent = new Intent(this,InformacionActivity.class);
+            intent = new Intent(this,InformacionUnidadActivity.class);
         }
         intent.putExtra(EXTRA,unidadInt);
         startActivity(intent);
