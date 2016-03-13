@@ -95,15 +95,15 @@ public class RepasarActivity extends AppCompatActivity {
                             "jarrones, cazuelas, etc.",3);
                     arrayPreguntas[6] = new Preguntas("Loza italiana:", "Se fabrica con arcilla entre amarilla-rjiza mezclada con arena" +
                             "con arena, pudiendo recubrirse de barniez transparent. La temperatura de coccion ronda los 1,000C",3);
-                    arrayPreguntas[7] = new Preguntas("Loza inglesa:","Fabricada de arcilla arenosa a la cual se le ha eliminado el óxido de " +
-                            "hierro y se le ha añadido silex, yeso, feldespato (bajando el punto de fusión de la mezcla) y caolín para mejorar la " +
-                            "blancura de la pasta. Se emplea para vajillay objetos de decoración.",3);
+                    arrayPreguntas[7] = new Preguntas("Loza inglesa:","HOLA",3);
                     arrayPreguntas[8] = new Preguntas("Materiales cerámicos impermeables o finos:", "en los que se somenten a temperaturas suficientemente " +
                             "altas como para vitrificar completamente la arena de cuarzo. Así, se obtienen productos impermeables y más duros.",3);
-                    arrayPreguntas[9] = new Preguntas("Gres cerámico común:", "obtenido a partir de arcillas ordinarias, sometidas a temperaturas de unos 1.300 °C. " +
-                            "Es muy empleado en pavimentos y paredes.",3);
+                    arrayPreguntas[9] = new Preguntas("Gres cerámico común:","obtenido a partir de arcillas ordinarias, sometidas a temperaturas de unos 1.300 °C. Es muy empleado en pavimentos y paredes.",3);
+//                "Fabricada de arcilla arenosa a la cual se le ha eliminado el óxido de " +
+//                        "hierro y se le ha añadido silex, yeso, feldespato (bajando el punto de fusión de la mezcla) y caolín para mejorar la " +
+//                        "blancura de la pasta. Se emplea para vajillay objetos de decoración.",3);
             }
-            //Toast.makeText(this,"Vitreos is checked",Toast.LENGTH_LONG).show();
+//            Toast.makeText(this,"Vitreos is checked",Toast.LENGTH_LONG).show();
         }else {
             if (PaginaPrincipalActivity.botonCeramicos.isChecked()) {
                 arrayPreguntas[0] = new Preguntas("CeramicosPregunta1", "CeramicosRespuesta1", 1);
@@ -116,15 +116,15 @@ public class RepasarActivity extends AppCompatActivity {
                 arrayPreguntas[7] = new Preguntas("CeramicosPregunta8", "CeramicosRespuesta8", 4);
                 arrayPreguntas[8] = new Preguntas("CeramicosPregunta9", "CeramicosRespuesta9", 5);
                 arrayPreguntas[9] = new Preguntas("CeramicosPregunta10", "CeramicosRespuesta10", 5);
-                Toast.makeText(this,"Ceramicos is checked",Toast.LENGTH_SHORT).show();
+//                Toast.makeText(this,"Ceramicos is checked",Toast.LENGTH_SHORT).show();
                 }
             }
 
-        Random r = new Random();
+//        Random r = new Random();
 
-        Integer index = r.nextInt(arrayPreguntas.length);
+        Integer index = 1;
 
-        Toast.makeText(this,index.toString(),Toast.LENGTH_LONG).show();
+        Toast.makeText(this,index.toString(),Toast.LENGTH_SHORT).show();
         mostrarPregunta(arrayPreguntas[index]);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -134,11 +134,20 @@ public class RepasarActivity extends AppCompatActivity {
 
     }
     public void mostrarPregunta(Preguntas pregunta){
+
         TextView textPregunta = (TextView) findViewById(R.id.tvPregunta);
         TextView textRespuesta = (TextView) findViewById(R.id.tvRespuesta);
 
+
         textPregunta.setText(pregunta.getPregunta());
         textRespuesta.setText(pregunta.getRespuesta());
+
     }
+
+    public void siguientePregunta(Integer index){
+
+    }
+
+
 
 }
