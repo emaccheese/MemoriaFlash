@@ -22,11 +22,14 @@ public class EvaluarActivity extends AppCompatActivity {
         if(PaginaPrincipalActivity.botonCeramicos.isChecked()){
             toolbar.setBackgroundResource(R.color.colorPrimaryAzul);
         }
-
         setSupportActionBar(toolbar);
         Intent intent = getIntent();
+//****************************************************************
 
+
+//****************************************************************
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
     }
 
 }
