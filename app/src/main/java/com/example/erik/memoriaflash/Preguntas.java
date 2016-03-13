@@ -1,9 +1,11 @@
 package com.example.erik.memoriaflash;
 
+import java.io.Serializable;
+
 /**
  * Created by Erik on 2/27/2016.
  */
-public class Preguntas {
+public class Preguntas implements Serializable{
     String pregunta;
     String respuesta;
     int unidad;

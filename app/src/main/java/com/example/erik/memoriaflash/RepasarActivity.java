@@ -14,13 +14,13 @@ import android.widget.Toast;
 
 import com.example.erik.memoriaflash.PaginaPrincipalActivity;
 
+import java.io.Serializable;
 import java.util.Random;
 
 public class RepasarActivity extends AppCompatActivity {
 
     public int unidadString = 0;
 
-    private Preguntas arrayPreguntas[] = new Preguntas[10];
     public Random r = new Random();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,14 +41,13 @@ public class RepasarActivity extends AppCompatActivity {
         Intent intent = getIntent();
 
         unidadString = intent.getIntExtra(MenuInicialActivity.EXTRA,0);
-        arrayPreguntas = (Preguntas[]) intent.getSerializableExtra("array");
 
 //        Random r = new Random();
 
         Integer index = 1;
 
         Toast.makeText(this,index.toString(),Toast.LENGTH_SHORT).show();
-        mostrarPregunta(arrayPreguntas[index]);
+        mostrarPregunta(MenuInicialActivity.arrayPreguntas[index]);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
     public void mostrarSiguiente(View view){

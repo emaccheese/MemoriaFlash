@@ -13,8 +13,8 @@ public class MenuInicialActivity extends AppCompatActivity {
     public int unidadInt =0;
     public final static String EXTRA = "com.example..erik.memoriaflash";
 
-    public int MAX = 10;
-    public Preguntas arrayPreguntas[] = new Preguntas[MAX];
+    public static int MAX = 10;
+    public static Preguntas arrayPreguntas[] = new Preguntas[MAX];
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -136,7 +136,8 @@ public class MenuInicialActivity extends AppCompatActivity {
             intent = new Intent(this,InformacionUnidadActivity.class);
         }
         intent.putExtra(EXTRA,unidadInt);
-        intent.putExtra("array",arrayPreguntas);
+        Serializable preguntas = arrayPreguntas;
+        intent.putExtra("array",preguntas);
         startActivity(intent);
     }
 }
