@@ -97,16 +97,42 @@ public class MenuInicialActivity extends AppCompatActivity {
 //            Toast.makeText(this,"Vitreos is checked",Toast.LENGTH_LONG).show();
         }else {
             if (PaginaPrincipalActivity.botonCeramicos.isChecked()) {
-                arrayPreguntas[0] = new Preguntas("CeramicosPregunta1", "CeramicosRespuesta1", 1);
-                arrayPreguntas[1] = new Preguntas("CeramicosPregunta2", "CeramicosRespuesta2", 1);
-                arrayPreguntas[2] = new Preguntas("CeramicosPregunta3", "CeramicosRespuesta3", 2);
-                arrayPreguntas[3] = new Preguntas("CeramicosPregunta4", "CeramicosRespuesta4", 2);
-                arrayPreguntas[4] = new Preguntas("CeramicosPregunta5", "CeramicosRespuesta5", 3);
-                arrayPreguntas[5] = new Preguntas("CeramicosPregunta6", "CeramicosRespuesta6", 3);
-                arrayPreguntas[6] = new Preguntas("CeramicosPregunta7", "CeramicosRespuesta7", 4);
-                arrayPreguntas[7] = new Preguntas("CeramicosPregunta8", "CeramicosRespuesta8", 4);
-                arrayPreguntas[8] = new Preguntas("CeramicosPregunta9", "CeramicosRespuesta9", 5);
-                arrayPreguntas[9] = new Preguntas("CeramicosPregunta10", "CeramicosRespuesta10", 5);
+                if(unidadInt ==1){
+                    arrayPreguntas[0] = new Preguntas("CeramicosPregunta1", "CeramicosRespuesta1", 1);
+                    arrayPreguntas[1] = new Preguntas("CeramicosPregunta2", "CeramicosRespuesta2", 1);
+                    arrayPreguntas[2] = new Preguntas("CeramicosPregunta3", "CeramicosRespuesta3", 1);
+                    arrayPreguntas[3] = new Preguntas("CeramicosPregunta4", "CeramicosRespuesta4", 1);
+                    arrayPreguntas[4] = new Preguntas("CeramicosPregunta5", "CeramicosRespuesta5", 1);
+                    arrayPreguntas[5] = new Preguntas("CeramicosPregunta6", "CeramicosRespuesta6", 1);
+                    arrayPreguntas[6] = new Preguntas("CeramicosPregunta7", "CeramicosRespuesta7", 1);
+                    arrayPreguntas[7] = new Preguntas("CeramicosPregunta8", "CeramicosRespuesta8", 1);
+                    arrayPreguntas[8] = new Preguntas("CeramicosPregunta9", "CeramicosRespuesta9", 1);
+                    arrayPreguntas[9] = new Preguntas("CeramicosPregunta10", "CeramicosRespuesta10", 1);
+                }
+                if(unidadInt == 2){
+                    arrayPreguntas[0] = new Preguntas("CeramicosPregunta1", "CeramicosRespuesta1", 2);
+                    arrayPreguntas[1] = new Preguntas("CeramicosPregunta2", "CeramicosRespuesta2", 2);
+                    arrayPreguntas[2] = new Preguntas("CeramicosPregunta3", "CeramicosRespuesta3", 2);
+                    arrayPreguntas[3] = new Preguntas("CeramicosPregunta4", "CeramicosRespuesta4", 2);
+                    arrayPreguntas[4] = new Preguntas("CeramicosPregunta5", "CeramicosRespuesta5", 2);
+                    arrayPreguntas[5] = new Preguntas("CeramicosPregunta6", "CeramicosRespuesta6", 2);
+                    arrayPreguntas[6] = new Preguntas("CeramicosPregunta7", "CeramicosRespuesta7", 2);
+                    arrayPreguntas[7] = new Preguntas("CeramicosPregunta8", "CeramicosRespuesta8", 2);
+                    arrayPreguntas[8] = new Preguntas("CeramicosPregunta9", "CeramicosRespuesta9", 2);
+                    arrayPreguntas[9] = new Preguntas("CeramicosPregunta10", "CeramicosRespuesta10", 2);
+                }
+                if(unidadInt == 3){
+                    arrayPreguntas[0] = new Preguntas("CeramicosPregunta1", "CeramicosRespuesta1", 3);
+                    arrayPreguntas[1] = new Preguntas("CeramicosPregunta2", "CeramicosRespuesta2", 3);
+                    arrayPreguntas[2] = new Preguntas("CeramicosPregunta3", "CeramicosRespuesta3", 3);
+                    arrayPreguntas[3] = new Preguntas("CeramicosPregunta4", "CeramicosRespuesta4", 3);
+                    arrayPreguntas[4] = new Preguntas("CeramicosPregunta5", "CeramicosRespuesta5", 3);
+                    arrayPreguntas[5] = new Preguntas("CeramicosPregunta6", "CeramicosRespuesta6", 3);
+                    arrayPreguntas[6] = new Preguntas("CeramicosPregunta7", "CeramicosRespuesta7", 3);
+                    arrayPreguntas[7] = new Preguntas("CeramicosPregunta8", "CeramicosRespuesta8", 3);
+                    arrayPreguntas[8] = new Preguntas("CeramicosPregunta9", "CeramicosRespuesta9", 3);
+                    arrayPreguntas[9] = new Preguntas("CeramicosPregunta10", "CeramicosRespuesta10", 3);
+                }
 //                Toast.makeText(this,"Ceramicos is checked",Toast.LENGTH_SHORT).show();
             }
         }
