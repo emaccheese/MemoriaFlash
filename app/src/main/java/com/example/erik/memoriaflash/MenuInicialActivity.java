@@ -142,8 +142,6 @@ public class MenuInicialActivity extends AppCompatActivity {
 
 
 
-
-
     }
 
     public void btnClick(View view){

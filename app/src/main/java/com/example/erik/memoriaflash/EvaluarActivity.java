@@ -1,6 +1,7 @@
 package com.example.erik.memoriaflash;
 
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -17,6 +18,7 @@ public class EvaluarActivity extends AppCompatActivity {
     public RadioButton opciones [] = new RadioButton[4];
     public int indexRespuesta;
     public int indexPregunta=0;
+    public int resourcesColor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,13 +26,16 @@ public class EvaluarActivity extends AppCompatActivity {
         int unidad;
         setContentView(R.layout.activity_evaluar);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle("Evaluar");
+
         if(PaginaPrincipalActivity.botonVitreos.isChecked()){
-            toolbar.setBackgroundResource(R.color.colorPrimaryVerde);
+            resourcesColor = R.color.colorPrimaryVerde;
+            toolbar.setBackgroundResource(resourcesColor);
         }
         if(PaginaPrincipalActivity.botonCeramicos.isChecked()){
-            toolbar.setBackgroundResource(R.color.colorPrimaryAzul);
+            resourcesColor = R.color.colorPrimaryAzul;
+            toolbar.setBackgroundResource(resourcesColor);
         }
+        toolbar.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
         setSupportActionBar(toolbar);
         Intent intent = getIntent();
 //****************************************************************
@@ -52,17 +57,15 @@ public class EvaluarActivity extends AppCompatActivity {
         }else{
             Toast.makeText(this,"indexRespuesta mayor a 4",Toast.LENGTH_SHORT).show();
         }
-
 //****************************************************************
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
     }
+
     public void setTextRadioButtons(int index){
-        int j = index+1;
+        Random r = new Random();
         for(int i =0;i<4;i++){
-            if(i != index && j <10){
-                opciones[i].setText(preguntas[j].getRespuesta());
-                j++;
+            if(i != index){
+                opciones[i].setText(preguntas[r.nextInt(9)].getRespuesta());//<-----------------RETOMAR DESDE AQUI
             }
         }
     }
@@ -82,35 +85,36 @@ public class EvaluarActivity extends AppCompatActivity {
         }
     }
     public void siguientePregunta(){
+        Random r = new Random();
         indexPregunta++;
         tvPregunta.setText(preguntas[indexPregunta].getPregunta());
         Integer integer = indexPregunta;
-        Toast.makeText(this,integer.toString(),Toast.LENGTH_SHORT).show();
+        indexRespuesta = r.nextInt(3);
+        setTextRadioButtons(indexRespuesta);
     }
+
     public void setRadioBtn(View view){
         if(view.getId() == opciones[0].getId()){
-            opciones[0].setChecked(true);
-            opciones[1].setChecked(false);
-            opciones[2].setChecked(false);
-            opciones[3].setChecked(false);
+            setCheckedRadioBtn(0);
         }
         if(view.getId() == opciones[1].getId()){
-            opciones[1].setChecked(true);
-            opciones[0].setChecked(false);
-            opciones[2].setChecked(false);
-            opciones[3].setChecked(false);
+            setCheckedRadioBtn(1);
         }
         if(view.getId() == opciones[2].getId()){
-            opciones[2].setChecked(true);
-            opciones[1].setChecked(false);
-            opciones[0].setChecked(false);
-            opciones[3].setChecked(false);
+            setCheckedRadioBtn(2);
         }
         if(view.getId() == opciones[3].getId()){
-            opciones[3].setChecked(true);
-            opciones[1].setChecked(false);
-            opciones[2].setChecked(false);
-            opciones[0].setChecked(false);
+            setCheckedRadioBtn(3);
+        }
+    }
+    public void setCheckedRadioBtn(int btnEscojido){
+        opciones[btnEscojido].setChecked(true);
+        opciones[btnEscojido].setBackgroundResource(resourcesColor);
+
+        for(int i = 0; i <4;i++){
+            if(i!= btnEscojido){
+                opciones[i].setChecked(false);
+                opciones[i].setBackgroundResource(R.color.white);            }
         }
     }
 }
