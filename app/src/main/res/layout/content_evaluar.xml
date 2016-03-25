@@ -41,7 +41,9 @@
                 android:paddingBottom="10dp"
                 android:paddingTop="5dp"
                 android:outlineProvider="bounds"
-                android:textStyle="italic" />
+                android:textStyle="italic"
+                android:background="@drawable/custom_ripple"
+                />
 
             <RadioButton
                 android:id="@+id/rdBtnRespuesta2"
@@ -52,7 +54,9 @@
                 android:paddingTop="5dp"
                 android:paddingBottom="10dp"
                 android:outlineProvider="bounds"
-                android:textStyle="italic" />
+                android:textStyle="italic"
+                android:background="@drawable/custom_ripple"
+                />
 
             <RadioButton
                 android:id="@+id/rdBtnRespuesta3"
@@ -63,7 +67,9 @@
                 android:paddingTop="5dp"
                 android:paddingBottom="10dp"
                 android:outlineProvider="background"
-                android:textStyle="italic" />
+                android:textStyle="italic"
+                android:background="@drawable/custom_ripple"
+                />
 
             <RadioButton
                 android:id="@+id/rdBtnRespuesta4"
@@ -74,7 +80,9 @@
                 android:paddingBottom="10dp"
                 android:paddingTop="5dp"
                 android:outlineProvider="background"
-                android:textStyle="italic" />
+                android:textStyle="italic"
+                android:background="@drawable/custom_ripple"
+                />
             </LinearLayout>
         </ScrollView>
 

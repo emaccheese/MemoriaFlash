@@ -17,7 +17,7 @@ public class EvaluarActivity extends AppCompatActivity {
     public TextView tvPregunta;
     public RadioButton opciones [] = new RadioButton[4];
     public int indexRespuesta;
-    public int indexPregunta=0;
+    private int indexPregunta=0;
     public int resourcesColor;
 
     @Override
@@ -26,7 +26,7 @@ public class EvaluarActivity extends AppCompatActivity {
         int unidad;
         setContentView(R.layout.activity_evaluar);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-
+        //Set color for toolbar
         if(PaginaPrincipalActivity.botonVitreos.isChecked()){
             resourcesColor = R.color.colorPrimaryVerde;
             toolbar.setBackgroundResource(resourcesColor);
@@ -35,7 +35,6 @@ public class EvaluarActivity extends AppCompatActivity {
             resourcesColor = R.color.colorPrimaryAzul;
             toolbar.setBackgroundResource(resourcesColor);
         }
-        toolbar.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
         setSupportActionBar(toolbar);
         Intent intent = getIntent();
 //****************************************************************
@@ -46,27 +45,28 @@ public class EvaluarActivity extends AppCompatActivity {
         opciones[1] = (RadioButton) findViewById(R.id.rdBtnRespuesta2);
         opciones[2] = (RadioButton) findViewById(R.id.rdBtnRespuesta3);
         opciones[3] = (RadioButton) findViewById(R.id.rdBtnRespuesta4);
+        indexPregunta=siguientePregunta(indexPregunta);
+//        tvPregunta.setText(preguntas[indexPregunta].getPregunta());
+//        indexRespuesta = r.nextInt(3);
+//        opciones[indexRespuesta].setText(preguntas[indexPregunta].getRespuesta());
+//        setTextRadioButtons(indexRespuesta);
 
-        tvPregunta.setText(preguntas[indexPregunta].getPregunta());
-        indexRespuesta = r.nextInt(3);
-        if(indexRespuesta <4){
-            opciones[indexRespuesta].setText(preguntas[indexPregunta].getRespuesta());
-            setTextRadioButtons(indexRespuesta);
-            Integer integer = indexPregunta;
-            Toast.makeText(this,integer.toString(),Toast.LENGTH_SHORT).show();
-        }else{
-            Toast.makeText(this,"indexRespuesta mayor a 4",Toast.LENGTH_SHORT).show();
-        }
 //****************************************************************
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     public void setTextRadioButtons(int index){
         Random r = new Random();
+        int auxRandom;
+
         for(int i =0;i<4;i++){
             if(i != index){
-                opciones[i].setText(preguntas[r.nextInt(9)].getRespuesta());//<-----------------RETOMAR DESDE AQUI
+                do{
+                    auxRandom = r.nextInt(9);
+                }while(auxRandom == indexPregunta);
+                opciones[i].setText(preguntas[auxRandom].getRespuesta());
             }
+            opciones[index].setText(preguntas[indexPregunta].getRespuesta()); // Pone la respuesta correcta en el lugar de index
         }
     }
     public void evaluarRespuesta(View view){
@@ -74,7 +74,7 @@ public class EvaluarActivity extends AppCompatActivity {
         if(indexPregunta<10) {
             if (view.getId() == opciones[indexRespuesta].getId()) {
                 Toast.makeText(this, "Respuesta Correcta", Toast.LENGTH_SHORT).show();
-                siguientePregunta();
+               indexPregunta =  siguientePregunta(indexPregunta);
             } else {
                 Toast.makeText(this, "Intenta de Nuevo", Toast.LENGTH_SHORT).show();
             }
@@ -84,13 +84,14 @@ public class EvaluarActivity extends AppCompatActivity {
 
         }
     }
-    public void siguientePregunta(){
+    public int siguientePregunta(int preguntaIndex){
         Random r = new Random();
-        indexPregunta++;
-        tvPregunta.setText(preguntas[indexPregunta].getPregunta());
-        Integer integer = indexPregunta;
+        tvPregunta.setText(preguntas[preguntaIndex].getPregunta());
         indexRespuesta = r.nextInt(3);
         setTextRadioButtons(indexRespuesta);
+        preguntaIndex++;
+
+        return preguntaIndex;
     }
 
     public void setRadioBtn(View view){
@@ -109,12 +110,13 @@ public class EvaluarActivity extends AppCompatActivity {
     }
     public void setCheckedRadioBtn(int btnEscojido){
         opciones[btnEscojido].setChecked(true);
-        opciones[btnEscojido].setBackgroundResource(resourcesColor);
+//        opciones[btnEscojido].setBackgroundResource(resourcesColor);
 
         for(int i = 0; i <4;i++){
             if(i!= btnEscojido){
                 opciones[i].setChecked(false);
-                opciones[i].setBackgroundResource(R.color.white);            }
+//                opciones[i].setBackgroundResource(R.color.white);
+            }
         }
     }
 }
