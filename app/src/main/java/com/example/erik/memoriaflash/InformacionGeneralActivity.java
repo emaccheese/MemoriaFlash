@@ -18,17 +18,20 @@ public class InformacionGeneralActivity extends AppCompatActivity {
         Intent intent = getIntent();
         unidadInt = intent.getIntExtra(PaginaPrincipalActivity.EXTRA,0);
 
-        if(PaginaPrincipalActivity.botonVitreos.isChecked()){
+        if(PaginaPrincipalActivity.botonVitreos.isChecked() && !PaginaPrincipalActivity.botonCeramicos.isChecked()){
             toolbar.setBackgroundResource(R.color.colorPrimaryVerde);
             toolbar.setTitle("Informacion Vitreos");
         }
-        if(PaginaPrincipalActivity.botonCeramicos.isChecked()){
+        if(PaginaPrincipalActivity.botonCeramicos.isChecked() && !PaginaPrincipalActivity.botonVitreos.isChecked()){
             toolbar.setBackgroundResource(R.color.colorPrimaryAzul);
             toolbar.setTitle("Informacion Ceramicos");
         }
+        if(PaginaPrincipalActivity.botonCeramicos.isChecked() && !PaginaPrincipalActivity.botonVitreos.isChecked()){
+            toolbar.setBackgroundResource(R.color.colorPrimaryRojo);
+            toolbar.setTitle("Informacion Vitreos y Ceramicos");
+        }
 
-
-        TextView texto1= (TextView) findViewById(R.id.txt1);
+            TextView texto1= (TextView) findViewById(R.id.txt1);
         texto1.setText(R.string.title_activity_info1);
         TextView texto2= (TextView) findViewById(R.id.txt2);
         texto2.setText(R.string.title_activity_info2);

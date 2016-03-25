@@ -13,16 +13,12 @@ import android.widget.RadioButton;
 public class PaginaPrincipalActivity extends AppCompatActivity {
     public final static String EXTRA = "com.example..erik.memoriaflash";
     public static final String PREFS_NAME = "boolMateriaEscojida";
-
     public static RadioButton botonCeramicos;
     public static RadioButton botonVitreos;
+    public static RadioButton botonAnd;
     public boolean boolCeramicos;
     public boolean boolVitreos;
-    public Button b1;
-    public Button b2;
-    public Button b3;
-    public Button b4;
-    public Button b5;
+    public Button [] botones = new Button[5];
     public Toolbar toolbar;
 
     @Override
@@ -34,6 +30,7 @@ public class PaginaPrincipalActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         botonCeramicos = (RadioButton)findViewById(R.id.rdBtnCeramicos);
         botonVitreos = (RadioButton)findViewById(R.id.rdBtnVitreos);
+        botonAnd = (RadioButton)findViewById(R.id.rdBtnAnd);
     }
     @Override
     protected void onStart(){
@@ -41,82 +38,84 @@ public class PaginaPrincipalActivity extends AppCompatActivity {
         SharedPreferences settings = getSharedPreferences(PREFS_NAME,MODE_PRIVATE);
         botonCeramicos.setChecked(settings.getBoolean("estadoBtnCeramico",true));
         botonVitreos.setChecked(settings.getBoolean("estadoBtnVitreos",false));
+        botonAnd.setChecked(settings.getBoolean("estadoBtnAnd",false));
 
-        b1 = (Button) findViewById(R.id.btnUnidad1);
-        b2 = (Button) findViewById(R.id.btnUnidad2);
-        b3 = (Button) findViewById(R.id.btnUnidad3);
-        b4 = (Button) findViewById(R.id.btnResultadosGenerales);
-        b5 = (Button) findViewById(R.id.btnInfoMateria);
-
+        botones[0] = (Button) findViewById(R.id.btnUnidad1);
+        botones[1] = (Button) findViewById(R.id.btnUnidad2);
+        botones[2] = (Button) findViewById(R.id.btnUnidad3);
+        botones[3] = (Button) findViewById(R.id.btnResultadosGenerales);
+        botones[4] = (Button) findViewById(R.id.btnInfoMateria);
         if(botonCeramicos.isChecked()){
-            b1.setBackgroundResource(R.drawable.buttons_azul);
-            b2.setBackgroundResource(R.drawable.buttons_azul);
-            b3.setBackgroundResource(R.drawable.buttons_azul);
-            b4.setBackgroundResource(R.drawable.buttons_azul);
-            b5.setBackgroundResource(R.drawable.buttons_azul);
+            setColorBtns("azul");
             toolbar.setBackgroundResource(R.color.colorPrimaryDarkAzul);
         }
         if(botonVitreos.isChecked()){
-            b1.setBackgroundResource(R.drawable.buttons_verde);
-            b2.setBackgroundResource(R.drawable.buttons_verde);
-            b3.setBackgroundResource(R.drawable.buttons_verde);
-            b4.setBackgroundResource(R.drawable.buttons_verde);
-            b5.setBackgroundResource(R.drawable.buttons_verde);
+            setColorBtns("verde");
             toolbar.setBackgroundResource(R.color.colorAccentVerde);
+        }
+        if(botonAnd.isChecked()){
+            setColorBtns("rojo");
+            toolbar.setBackgroundResource(R.color.colorAccentRojo);
+        }
+    }
+
+    public void setColorBtns(String color){
+        if(color == "verde"){
+            for(int i = 0; i<5;i++){
+                botones[i].setBackgroundResource(R.drawable.buttons_verde);
+            }
+        }
+        if (color == "azul") {
+            for(int i = 0; i<5;i++){
+                botones[i].setBackgroundResource(R.drawable.buttons_azul);
+            }
+        }
+        if(color == "rojo"){
+            for(int i = 0; i<5;i++){
+                botones[i].setBackgroundResource(R.drawable.buttons_rojo);
+            }
         }
 
     }
-
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 
     public void materiaSeleccionada(View view){
 
-        if(view == botonCeramicos){
-            if(botonVitreos.isChecked()){
-                boolVitreos = false;
-                botonVitreos.setChecked(false);
+            // Is the button now checked?
+            boolean checked = ((RadioButton) view).isChecked();
+
+            // Check which radio button was clicked
+            switch(view.getId()) {
+                case R.id.rdBtnCeramicos:
+                        if (checked){
+                            setColorBtns("azul");
+                            toolbar.setBackgroundResource(R.color.colorAccentAzul);
+                        }
+                        break;
+                case R.id.rdBtnVitreos:
+                        if (checked){
+                            setColorBtns("verde");
+                            toolbar.setBackgroundResource(R.color.colorAccentVerde);
+                        }
+                        break;
+                case R.id.rdBtnAnd:
+                    if (checked){
+                        setColorBtns("rojo");
+                        toolbar.setBackgroundResource(R.color.colorAccentRojo);
+                    }
+                    break;
             }
-            if(!botonCeramicos.isChecked()){
-                boolCeramicos = true;
-                botonCeramicos.setChecked(true);
-            }
-            b1.setBackgroundResource(R.drawable.buttons_azul);
-            b2.setBackgroundResource(R.drawable.buttons_azul);
-            b3.setBackgroundResource(R.drawable.buttons_azul);
-            b4.setBackgroundResource(R.drawable.buttons_azul);
-            b5.setBackgroundResource(R.drawable.buttons_azul);
-            toolbar.setBackgroundResource(R.color.colorPrimaryDarkAzul);
-        }
-        if(view == botonVitreos){
-            if(botonCeramicos.isChecked()){
-                boolCeramicos = false;
-                botonCeramicos.setChecked(false);
-            }
-            if(!botonVitreos.isChecked()){
-                boolVitreos = true;
-                botonVitreos.setChecked(true);
-            }
-            b1.setBackgroundResource(R.drawable.buttons_verde);
-            b2.setBackgroundResource(R.drawable.buttons_verde);
-            b3.setBackgroundResource(R.drawable.buttons_verde);
-            b4.setBackgroundResource(R.drawable.buttons_verde);
-            b5.setBackgroundResource(R.drawable.buttons_verde);
-            toolbar.setBackgroundResource(R.color.colorAccentVerde);
-        }
     }
 
     public void opcionSeleccionada(View view){
@@ -140,22 +139,14 @@ public class PaginaPrincipalActivity extends AppCompatActivity {
         }
         startActivity(intent);
     }
-/*
-    @Override
-    public void onSaveInstanceState(Bundle savedInstanceState) {
-        savedInstanceState.putBoolean("estadoBtnCeramico", botonCeramicos.isChecked());
-        savedInstanceState.putBoolean("estadoBtnVitreos", botonVitreos.isChecked());
-    }*/
-
     @Override
     protected void onStop(){
         super.onStop();
-
         SharedPreferences settings = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
         SharedPreferences.Editor editor = settings.edit();
         editor.putBoolean("estadoBtnCeramico",botonCeramicos.isChecked());
         editor.putBoolean("estadoBtnVitreos",botonVitreos.isChecked());
-
+        editor.putBoolean("estadoBtnAnd",botonAnd.isChecked());
         editor.commit();
     }
 }

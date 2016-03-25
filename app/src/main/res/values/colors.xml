@@ -1,18 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+
     <color name="colorPrimaryVerde">#8bcf95</color>
     <color name="colorPrimaryDarkVerde">#74b36b</color>
     <color name="colorAccentVerde">#8bcf95</color>
+
+
+    <color name="colorPrimaryAzul">#f4cf72</color>
+    <color name="colorPrimaryDarkAzul">#dfa645</color>
+    <color name="colorAccentAzul">#f4cf72</color>
+
+    <color name="colorPrimaryRojo">#ff3a3d</color>
+    <color name="colorPrimaryDarkRojo">#be2f31</color>
+    <color name="colorAccentRojo">#ff3a3d</color>
+
+    <color name="holo_orange_dark">#da7400</color>
+    <color name="holo_red_dark">#141313</color>
+    <color name="light_grey">#c4c2c2</color>
     <color name="black">#000000</color>
     <color name="background_material_light">#ffffff</color>
     <color name="white">#ffffff</color>
     <color name="colorBackground">#ffffff</color>
     <color name="primary_text_default_material_light">#de000000</color>
-    <color name="holo_orange_dark">#da7400</color>
-    <color name="colorPrimaryAzul">#f4cf72</color>
-    <color name="colorPrimaryDarkAzul">#dfa645</color>
-    <color name="colorAccentAzul">#f4cf72</color>
-    <color name="holo_red_dark">#141313</color>
-    <color name="light_grey">#c4c2c2</color>
-
 </resources>

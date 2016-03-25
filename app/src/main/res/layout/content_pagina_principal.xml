@@ -14,27 +14,37 @@
     tools:context="com.example.erik.memoriaflash.PaginaPrincipalActivity"
     tools:showIn="@layout/activity_pagina_principal"
     >
-   <LinearLayout
+   <RadioGroup
        android:layout_width="match_parent"
-       android:layout_height="wrap_content">
+       android:layout_height="wrap_content"
+       android:orientation="horizontal"
+       android:paddingBottom="10dp"
+       >
        <RadioButton
            android:layout_width="0dp"
            android:layout_height="45dp"
            android:layout_weight="1"
-           android:text="Materiales Ceramicos"
+           android:text="Ceramicos"
             android:textStyle="bold"
            android:id="@+id/rdBtnCeramicos"
            android:onClick="materiaSeleccionada" />
-
+       <RadioButton
+           android:layout_width="0dp"
+           android:layout_height="45dp"
+           android:layout_weight="1"
+           android:text="Vit. y Cer."
+           android:textStyle="bold"
+           android:id="@+id/rdBtnAnd"
+           android:onClick="materiaSeleccionada" />
         <RadioButton
             android:layout_width="0dp"
             android:layout_height="45dp"
             android:layout_weight="1"
-            android:text="Materiales Vitreos"
+            android:text="Vitreos"
             android:textStyle="bold"
             android:id="@+id/rdBtnVitreos"
             android:onClick="materiaSeleccionada" />
-   </LinearLayout>
+   </RadioGroup>
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"

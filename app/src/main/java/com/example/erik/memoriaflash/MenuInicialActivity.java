@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import java.io.Serializable;
@@ -25,12 +26,28 @@ public class MenuInicialActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         unidadInt = intent.getIntExtra(PaginaPrincipalActivity.EXTRA,0);
+        Button btn1 = (Button) findViewById(R.id.btnInformacionUnidad);
+        Button btn2 = (Button) findViewById(R.id.btnRepasar);
+        Button btn3 = (Button) findViewById(R.id.btnEvaluar);
+        Button btn4 = (Button) findViewById(R.id.btnResultadosUnidad);
 
-        if(PaginaPrincipalActivity.botonVitreos.isChecked()){
+        if(PaginaPrincipalActivity.botonVitreos.isChecked() && !PaginaPrincipalActivity.botonCeramicos.isChecked()){
             toolbar.setBackgroundResource(R.color.colorPrimaryVerde);
+            btn1.setBackgroundResource(R.drawable.buttons_verde);
+            btn2.setBackgroundResource(R.drawable.buttons_verde);
+            btn3.setBackgroundResource(R.drawable.buttons_verde);
+            btn4.setBackgroundResource(R.drawable.buttons_verde);
+
         }
-        if(PaginaPrincipalActivity.botonCeramicos.isChecked()){
+        if(PaginaPrincipalActivity.botonCeramicos.isChecked() && !PaginaPrincipalActivity.botonVitreos.isChecked()){
             toolbar.setBackgroundResource(R.color.colorPrimaryAzul);
+            btn1.setBackgroundResource(R.drawable.buttons_azul);
+            btn2.setBackgroundResource(R.drawable.buttons_azul);
+            btn3.setBackgroundResource(R.drawable.buttons_azul);
+            btn4.setBackgroundResource(R.drawable.buttons_azul);
+        }
+        if(PaginaPrincipalActivity.botonCeramicos.isChecked() && PaginaPrincipalActivity.botonVitreos.isChecked()){
+
         }
 //****************************************************
         if (PaginaPrincipalActivity.botonVitreos.isChecked()) {
