@@ -21,11 +21,11 @@
            android:layout_width="0dp"
            android:layout_height="45dp"
            android:layout_weight="1"
-
            android:text="Materiales Ceramicos"
             android:textStyle="bold"
            android:id="@+id/rdBtnCeramicos"
            android:onClick="materiaSeleccionada" />
+
         <RadioButton
             android:layout_width="0dp"
             android:layout_height="45dp"

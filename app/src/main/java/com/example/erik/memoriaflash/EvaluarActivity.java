@@ -1,11 +1,13 @@
 package com.example.erik.memoriaflash;
 
+import android.app.DialogFragment;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -13,6 +15,7 @@ import android.widget.Toast;
 import java.util.Random;
 
 public class EvaluarActivity extends AppCompatActivity {
+    public static Preguntas auxPregunta;
     public Preguntas [] preguntas;
     public TextView tvPregunta;
     public RadioButton opciones [] = new RadioButton[4];
@@ -26,14 +29,17 @@ public class EvaluarActivity extends AppCompatActivity {
         int unidad;
         setContentView(R.layout.activity_evaluar);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        //Set color for toolbar
+        //Set color for toolbar and button
+        Button btn1 = (Button) findViewById(R.id.btnContestar);
         if(PaginaPrincipalActivity.botonVitreos.isChecked()){
             resourcesColor = R.color.colorPrimaryVerde;
             toolbar.setBackgroundResource(resourcesColor);
+            btn1.setBackgroundResource(R.drawable.buttons_verde);
         }
         if(PaginaPrincipalActivity.botonCeramicos.isChecked()){
             resourcesColor = R.color.colorPrimaryAzul;
             toolbar.setBackgroundResource(resourcesColor);
+            btn1.setBackgroundResource(R.drawable.buttons_azul);
         }
         setSupportActionBar(toolbar);
         Intent intent = getIntent();
@@ -46,19 +52,14 @@ public class EvaluarActivity extends AppCompatActivity {
         opciones[2] = (RadioButton) findViewById(R.id.rdBtnRespuesta3);
         opciones[3] = (RadioButton) findViewById(R.id.rdBtnRespuesta4);
         indexPregunta=siguientePregunta(indexPregunta);
-//        tvPregunta.setText(preguntas[indexPregunta].getPregunta());
-//        indexRespuesta = r.nextInt(3);
-//        opciones[indexRespuesta].setText(preguntas[indexPregunta].getRespuesta());
-//        setTextRadioButtons(indexRespuesta);
 
 //****************************************************************
-//        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     public void setTextRadioButtons(int index){
         Random r = new Random();
         int auxRandom;
-
         for(int i =0;i<4;i++){
             if(i != index){
                 do{
@@ -67,13 +68,17 @@ public class EvaluarActivity extends AppCompatActivity {
                 opciones[i].setText(preguntas[auxRandom].getRespuesta());
             }
             opciones[index].setText(preguntas[indexPregunta].getRespuesta()); // Pone la respuesta correcta en el lugar de index
+            opciones[i].setChecked(false);
         }
     }
     public void evaluarRespuesta(View view){
-        setRadioBtn(view);
+        int viewID = getCheckedRadioButtonID();
         if(indexPregunta<10) {
-            if (view.getId() == opciones[indexRespuesta].getId()) {
+            if (viewID == opciones[indexRespuesta].getId()) {
                 Toast.makeText(this, "Respuesta Correcta", Toast.LENGTH_SHORT).show();
+                DialogFragment dialog = new MensageDialog();
+                auxPregunta = preguntas[indexPregunta];
+                dialog.show(getFragmentManager(),"mensaje");
                indexPregunta =  siguientePregunta(indexPregunta);
             } else {
                 Toast.makeText(this, "Intenta de Nuevo", Toast.LENGTH_SHORT).show();
@@ -81,8 +86,13 @@ public class EvaluarActivity extends AppCompatActivity {
         }
         else{
             Toast.makeText(this,"Terminaste la evaluacion",Toast.LENGTH_SHORT).show();
-
         }
+    }
+    public int getCheckedRadioButtonID(){
+        for(int i = 0;i <4;i++){
+            if(opciones[i].isChecked()) return opciones[i].getId();
+        }
+        return 0;
     }
     public int siguientePregunta(int preguntaIndex){
         Random r = new Random();
@@ -90,7 +100,6 @@ public class EvaluarActivity extends AppCompatActivity {
         indexRespuesta = r.nextInt(3);
         setTextRadioButtons(indexRespuesta);
         preguntaIndex++;
-
         return preguntaIndex;
     }
 
@@ -110,12 +119,9 @@ public class EvaluarActivity extends AppCompatActivity {
     }
     public void setCheckedRadioBtn(int btnEscojido){
         opciones[btnEscojido].setChecked(true);
-//        opciones[btnEscojido].setBackgroundResource(resourcesColor);
-
         for(int i = 0; i <4;i++){
             if(i!= btnEscojido){
                 opciones[i].setChecked(false);
-//                opciones[i].setBackgroundResource(R.color.white);
             }
         }
     }

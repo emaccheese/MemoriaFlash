@@ -25,7 +25,7 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
             <LinearLayout
                 android:id="@+id/layoutOpcionesRespuesta"
                 android:layout_width="match_parent"
@@ -37,11 +37,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:onClick="evaluarRespuesta"
                 android:paddingBottom="10dp"
                 android:paddingTop="5dp"
-                android:outlineProvider="bounds"
-                android:textStyle="italic"
+                android:onClick="setRadioBtn"
                 android:background="@drawable/custom_ripple"
                 />
 
@@ -50,11 +48,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:onClick="evaluarRespuesta"
                 android:paddingTop="5dp"
                 android:paddingBottom="10dp"
-                android:outlineProvider="bounds"
-                android:textStyle="italic"
+                android:onClick="setRadioBtn"
                 android:background="@drawable/custom_ripple"
                 />
 
@@ -63,11 +59,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:onClick="evaluarRespuesta"
                 android:paddingTop="5dp"
                 android:paddingBottom="10dp"
-                android:outlineProvider="background"
-                android:textStyle="italic"
+                android:onClick="setRadioBtn"
                 android:background="@drawable/custom_ripple"
                 />
 
@@ -76,16 +70,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:onClick="evaluarRespuesta"
                 android:paddingBottom="10dp"
                 android:paddingTop="5dp"
-                android:outlineProvider="background"
-                android:textStyle="italic"
+                android:onClick="setRadioBtn"
                 android:background="@drawable/custom_ripple"
                 />
             </LinearLayout>
         </ScrollView>
+    <Button
+        android:id="@+id/btnContestar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/responder"
+        android:onClick="evaluarRespuesta"
 
-
+        />
 
 </LinearLayout>
