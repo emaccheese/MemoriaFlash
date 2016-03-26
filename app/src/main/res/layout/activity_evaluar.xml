@@ -19,6 +19,7 @@
             android:background="?attr/colorPrimary"
             app:popupTheme="@style/AppTheme.NoActionBar.PopupOverlay"
             android:gravity="center"
+            android:navigationIcon="@mipmap/ic_launcher"
             />
 
     </android.support.design.widget.AppBarLayout>

@@ -30,13 +30,16 @@ public class RepasarActivity extends AppCompatActivity {
         //Asignar el toolbar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         //Cambio de color dependiendo de la materia
-        if(PaginaPrincipalActivity.botonVitreos.isChecked() && !PaginaPrincipalActivity.botonCeramicos.isChecked()){
+        if(PaginaPrincipalActivity.boolVitreos){
+//        if(PaginaPrincipalActivity.botonVitreos.isChecked() && !PaginaPrincipalActivity.botonCeramicos.isChecked()){
             toolbar.setBackgroundResource(R.color.colorPrimaryVerde);
         }
-        if(PaginaPrincipalActivity.botonCeramicos.isChecked() && !PaginaPrincipalActivity.botonVitreos.isChecked()){
+        if(PaginaPrincipalActivity.boolCeramicos){
+//        if(PaginaPrincipalActivity.botonCeramicos.isChecked() && !PaginaPrincipalActivity.botonVitreos.isChecked()){
             toolbar.setBackgroundResource(R.color.colorPrimaryAzul);
         }
-        if(PaginaPrincipalActivity.botonCeramicos.isChecked() && PaginaPrincipalActivity.botonVitreos.isChecked()){
+        if(PaginaPrincipalActivity.boolAnd){
+//        if(PaginaPrincipalActivity.botonCeramicos.isChecked() && PaginaPrincipalActivity.botonVitreos.isChecked()){
             toolbar.setBackgroundResource(R.color.colorPrimaryRojo);
         }
 

@@ -18,13 +18,16 @@ public class ResultadosActivity extends AppCompatActivity {
         setContentView(R.layout.activity_resultados);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        if(PaginaPrincipalActivity.botonVitreos.isChecked() && !PaginaPrincipalActivity.botonCeramicos.isChecked()){
+        if(PaginaPrincipalActivity.boolVitreos){
+//        if(PaginaPrincipalActivity.botonVitreos.isChecked() && !PaginaPrincipalActivity.botonCeramicos.isChecked()){
             toolbar.setBackgroundResource(R.color.colorPrimaryVerde);
         }
-        if(PaginaPrincipalActivity.botonCeramicos.isChecked() && !PaginaPrincipalActivity.botonVitreos.isChecked()){
+        if(PaginaPrincipalActivity.boolCeramicos){
+//        if(PaginaPrincipalActivity.botonCeramicos.isChecked() && !PaginaPrincipalActivity.botonVitreos.isChecked()){
             toolbar.setBackgroundResource(R.color.colorPrimaryAzul);
         }
-        if(PaginaPrincipalActivity.botonCeramicos.isChecked() && PaginaPrincipalActivity.botonVitreos.isChecked()){
+        if(PaginaPrincipalActivity.boolAnd){
+//        if(PaginaPrincipalActivity.botonCeramicos.isChecked() && PaginaPrincipalActivity.botonVitreos.isChecked()){
             toolbar.setBackgroundResource(R.color.colorPrimaryRojo);
         }
             Intent intent = getIntent();

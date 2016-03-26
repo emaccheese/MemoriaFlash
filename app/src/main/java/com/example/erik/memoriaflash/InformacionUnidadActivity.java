@@ -15,15 +15,18 @@ public class InformacionUnidadActivity extends AppCompatActivity {
         setContentView(R.layout.activity_informacion_unidad);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        if(PaginaPrincipalActivity.botonVitreos.isChecked() && !PaginaPrincipalActivity.botonCeramicos.isChecked()){
+        if(PaginaPrincipalActivity.boolVitreos){
+//        if(PaginaPrincipalActivity.botonVitreos.isChecked() && !PaginaPrincipalActivity.botonCeramicos.isChecked()){
             toolbar.setBackgroundResource(R.color.colorPrimaryVerde);
             toolbar.setTitle("Informacion Vitreos");
         }
-        if(PaginaPrincipalActivity.botonCeramicos.isChecked() && !PaginaPrincipalActivity.botonVitreos.isChecked()){
+        if(PaginaPrincipalActivity.boolCeramicos){
+//        if(PaginaPrincipalActivity.botonCeramicos.isChecked() && !PaginaPrincipalActivity.botonVitreos.isChecked()){
             toolbar.setBackgroundResource(R.color.colorPrimaryAzul);
             toolbar.setTitle("Informacion Ceramicos");
         }
-        if(PaginaPrincipalActivity.botonCeramicos.isChecked() && PaginaPrincipalActivity.botonVitreos.isChecked()){
+        if(PaginaPrincipalActivity.boolAnd){
+//        if(PaginaPrincipalActivity.botonCeramicos.isChecked() && PaginaPrincipalActivity.botonVitreos.isChecked()){
             toolbar.setBackgroundResource(R.color.colorPrimaryRojo);
             toolbar.setTitle("Informacion Vitreos y Ceramicos");
         }

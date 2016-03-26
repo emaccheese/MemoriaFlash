@@ -18,23 +18,31 @@
         android:layout_height="wrap_content"
         android:text="Informacion de Unidad"
         android:onClick="btnClick"
-        android:id="@+id/btnInformacionUnidad" />
+        android:id="@+id/btnInformacionUnidad"
+        style="@style/button_text"
+        />
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Repasar"
         android:onClick="btnClick"
-        android:id="@+id/btnRepasar" />
+        android:id="@+id/btnRepasar"
+        style="@style/button_text"
+        />
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Evaluar"
         android:onClick="btnClick"
-        android:id="@+id/btnEvaluar" />
+        android:id="@+id/btnEvaluar"
+        style="@style/button_text"
+        />
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Resultados"
         android:onClick="btnClick"
-        android:id="@+id/btnResultadosUnidad" />
+        android:id="@+id/btnResultadosUnidad"
+        style="@style/button_text"
+        />
 </LinearLayout>

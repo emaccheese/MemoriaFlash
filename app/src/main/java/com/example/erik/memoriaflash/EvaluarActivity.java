@@ -31,17 +31,20 @@ public class EvaluarActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         //Set color for toolbar and button
         Button btn1 = (Button) findViewById(R.id.btnContestar);
-        if(PaginaPrincipalActivity.botonVitreos.isChecked() && !PaginaPrincipalActivity.botonCeramicos.isChecked()){
+        if(PaginaPrincipalActivity.boolVitreos){
+//        if(PaginaPrincipalActivity.botonVitreos.isChecked() && !PaginaPrincipalActivity.botonCeramicos.isChecked()){
             resourcesColor = R.color.colorPrimaryVerde;
             toolbar.setBackgroundResource(resourcesColor);
             btn1.setBackgroundResource(R.drawable.buttons_verde);
         }
-        if(PaginaPrincipalActivity.botonCeramicos.isChecked() && !PaginaPrincipalActivity.botonVitreos.isChecked()){
+        if(PaginaPrincipalActivity.boolCeramicos){
+//        if(PaginaPrincipalActivity.botonCeramicos.isChecked() && !PaginaPrincipalActivity.botonVitreos.isChecked()){
             resourcesColor = R.color.colorPrimaryAzul;
             toolbar.setBackgroundResource(resourcesColor);
             btn1.setBackgroundResource(R.drawable.buttons_azul);
         }
-        if(PaginaPrincipalActivity.botonCeramicos.isChecked() && PaginaPrincipalActivity.botonVitreos.isChecked()){
+        if(PaginaPrincipalActivity.boolAnd){
+//        if(PaginaPrincipalActivity.botonCeramicos.isChecked() && PaginaPrincipalActivity.botonVitreos.isChecked()){
             resourcesColor = R.color.colorPrimaryRojo;
             toolbar.setBackgroundResource(resourcesColor);
             btn1.setBackgroundResource(R.drawable.buttons_rojo);

@@ -16,6 +16,7 @@ public class MenuInicialActivity extends AppCompatActivity {
 
     public static int MAX = 10;
     public static Preguntas arrayPreguntas[] = new Preguntas[MAX];
+    public Button botones [] = new Button[4];
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,31 +27,30 @@ public class MenuInicialActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         unidadInt = intent.getIntExtra(PaginaPrincipalActivity.EXTRA,0);
-        Button btn1 = (Button) findViewById(R.id.btnInformacionUnidad);
-        Button btn2 = (Button) findViewById(R.id.btnRepasar);
-        Button btn3 = (Button) findViewById(R.id.btnEvaluar);
-        Button btn4 = (Button) findViewById(R.id.btnResultadosUnidad);
+        botones[0] = (Button) findViewById(R.id.btnInformacionUnidad);
+        botones[1] = (Button) findViewById(R.id.btnRepasar);
+        botones[2] = (Button) findViewById(R.id.btnEvaluar);
+        botones[3] = (Button) findViewById(R.id.btnResultadosUnidad);
 
-        if(PaginaPrincipalActivity.botonVitreos.isChecked() && !PaginaPrincipalActivity.botonCeramicos.isChecked()){
+        if(PaginaPrincipalActivity.boolVitreos){
+//        if(PaginaPrincipalActivity.botonVitreos.isChecked()){
             toolbar.setBackgroundResource(R.color.colorPrimaryVerde);
-            btn1.setBackgroundResource(R.drawable.buttons_verde);
-            btn2.setBackgroundResource(R.drawable.buttons_verde);
-            btn3.setBackgroundResource(R.drawable.buttons_verde);
-            btn4.setBackgroundResource(R.drawable.buttons_verde);
+            setColorBtns("verde");
 
         }
-        if(PaginaPrincipalActivity.botonCeramicos.isChecked() && !PaginaPrincipalActivity.botonVitreos.isChecked()){
+        if(PaginaPrincipalActivity.boolCeramicos){
+//        if(PaginaPrincipalActivity.botonCeramicos.isChecked()){
             toolbar.setBackgroundResource(R.color.colorPrimaryAzul);
-            btn1.setBackgroundResource(R.drawable.buttons_azul);
-            btn2.setBackgroundResource(R.drawable.buttons_azul);
-            btn3.setBackgroundResource(R.drawable.buttons_azul);
-            btn4.setBackgroundResource(R.drawable.buttons_azul);
+            setColorBtns("azul");
         }
-        if(PaginaPrincipalActivity.botonCeramicos.isChecked() && PaginaPrincipalActivity.botonVitreos.isChecked()){
-
+        if(PaginaPrincipalActivity.boolAnd){
+//        if(PaginaPrincipalActivity.botonAnd.isChecked()){
+            toolbar.setBackgroundResource(R.color.colorPrimaryRojo);
+            setColorBtns("rojo");
         }
 //****************************************************
-        if (PaginaPrincipalActivity.botonVitreos.isChecked()) {
+        if(PaginaPrincipalActivity.boolVitreos){
+//        if (PaginaPrincipalActivity.botonVitreos.isChecked()) {
 
             if(unidadInt == 1)
             {
@@ -99,7 +99,8 @@ public class MenuInicialActivity extends AppCompatActivity {
             }
 //            Toast.makeText(this,"Vitreos is checked",Toast.LENGTH_LONG).show();
         }else {
-            if (PaginaPrincipalActivity.botonCeramicos.isChecked()) {
+            if(PaginaPrincipalActivity.boolCeramicos){
+//            if (PaginaPrincipalActivity.botonCeramicos.isChecked()) {
                 if(unidadInt ==1){
                     arrayPreguntas[0] = new Preguntas("CeramicosPregunta1U1", "CeramicosRespuesta1U1", 1);
                     arrayPreguntas[1] = new Preguntas("CeramicosPregunta2U1", "CeramicosRespuesta2U1", 1);
@@ -142,8 +143,23 @@ public class MenuInicialActivity extends AppCompatActivity {
 //*****************************************************
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
-
+    }
+    public void setColorBtns(String color){
+        if(color.equals("verde")){
+            for(int i = 0; i<4;i++){
+                botones[i].setBackgroundResource(R.drawable.buttons_verde);
+            }
+        }
+        if (color.equals("azul")) {
+            for(int i = 0; i<4;i++){
+                botones[i].setBackgroundResource(R.drawable.buttons_azul);
+            }
+        }
+        if(color.equals("rojo")){
+            for(int i = 0; i<4;i++){
+                botones[i].setBackgroundResource(R.drawable.buttons_rojo);
+            }
+        }
 
     }
 
